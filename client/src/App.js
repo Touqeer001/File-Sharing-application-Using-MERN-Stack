@@ -1,10 +1,10 @@
 import "./App.css";
 import images from "./images.png";
-import { useRef, useState } from "react"; //react me virtual dom ka concept hota h .virtual dom ke liye useRef ka used krte h
+import { useRef, useState } from "react"; //react me virtual dom ka concept hota h .virtual dom ke liye useRef ka used krte h...
 
 function App() {
   const [file, setFile] = useState("");
-  const fileInputUseRef = useRef(); //declaration of use ref
+  const fileInputUseRef = useRef(); //declaration of use ref....
   const onUploadClick = () => {
     fileInputUseRef.current.click();
   };
