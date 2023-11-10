@@ -1,6 +1,7 @@
 import "./App.css";
+import { uploadFile } from "./Services/api";
 import images from "./images.png";
-import { useRef, useState } from "react"; //react me virtual dom ka concept hota h .virtual dom ke liye useRef ka used krte h...
+import { useRef, useState, useEffect } from "react"; //react me virtual dom ka concept hota h .virtual dom ke liye useRef ka used krte h...
 
 function App() {
   const [file, setFile] = useState("");
@@ -9,6 +10,18 @@ function App() {
     fileInputUseRef.current.click();
   };
   console.log(file);
+  useEffect(() => {
+    const getImage = () => {
+      if (file) {
+        const data = new FormData();
+        data.append("name", file.name);
+        data.append("file", file);
+        uploadFile();
+      }
+    };
+    getImage();
+  }, [file]);
+
   return (
     <div className="container">
       <img src={images} alt="Image not found"></img>
