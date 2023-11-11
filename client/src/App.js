@@ -11,12 +11,12 @@ function App() {
   };
   console.log(file);
   useEffect(() => {
-    const getImage = () => {
+    const getImage = async () => {
       if (file) {
         const data = new FormData();
         data.append("name", file.name);
         data.append("file", file);
-        uploadFile();
+        let response = await uploadFile();
       }
     };
     getImage();
