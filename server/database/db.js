@@ -1,14 +1,20 @@
 //MongoDB Connection...
+// import mongoose from "mongoose";
+
 import mongoose from "mongoose";
+
 const Connection = async () => {
-  const URL = `mongodb://touqeer:Ansari@2001@cluster.l6nzyoa.mongodb.net/?retryWrites=true&w=majority`;
+  const URI =
+    "mongodb+srv://touqeeransari:Ansari@cluster0.fgmlj61.mongodb.net/?retryWrites=true&w=majority";
+
   try {
-    await mongoose.connect(URL, {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-    console.log("database connect sussessfully...");
+    console.log("Database connected successfully...");
   } catch (error) {
-    console.log("Error while connecting the database..", error);
+    console.error("Error while connecting to the database:", error.message);
   }
 };
 
