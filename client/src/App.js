@@ -16,7 +16,7 @@ function App() {
         const data = new FormData();
         data.append("name", file.name);
         data.append("file", file);
-        let response = await uploadFile();
+        let response = await uploadFile(data);
       }
     };
     getImage();
