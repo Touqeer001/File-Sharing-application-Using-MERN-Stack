@@ -1,10 +1,11 @@
 import "./App.css";
 import { uploadFile } from "./Services/api";
-import images from "./images.png";
+import images from "./resize-image.png";
 import { useRef, useState, useEffect } from "react"; //react me virtual dom ka concept hota h .virtual dom ke liye useRef ka used krte h...
 
 function App() {
   const [file, setFile] = useState("");
+  const [result, setResult] = useState("");
   const fileInputUseRef = useRef(); //declaration of use ref....
   const onUploadClick = () => {
     fileInputUseRef.current.click();
@@ -17,6 +18,7 @@ function App() {
         data.append("name", file.name);
         data.append("file", file);
         let response = await uploadFile(data);
+        setResult(response.path);
       }
     };
     getImage();
@@ -36,6 +38,9 @@ function App() {
           style={{ display: "none" }}
           onChange={(e) => setFile(e.target.files[0])}
         ></input>
+        <a href={result} target="_blank">
+          {result}
+        </a>
       </div>
     </div>
   );
