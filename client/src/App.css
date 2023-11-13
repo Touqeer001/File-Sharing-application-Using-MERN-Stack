@@ -18,7 +18,7 @@ img{
 }
 .Wrapper{
   color: white;
-  background:black;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,210,252,1) 90%);
   width: 600px;
   height: 400px ;
   margin: auto;
@@ -28,9 +28,36 @@ img{
 }
 
 button{
-  width: 150px;
-  height:40px;
-  border-radius: 5px;
-   margin: 30px 0px;
-  cursor: pointer;
+ 
+  font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #c10505;
+padding: 10px 30px;
+border: 2px solid #0066cc;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
 }
+button:hover{
+
+  transition : 1000ms;
+  padding: 10px 50px;
+  transform : translateY(-0px);
+  background-color: #fff;
+  color: #0066cc;
+  border: solid 2px #0066cc;
+  }
+
+  a{
+    Color: white;
+    font-style: italic;
+    font-family: auto;
+    font-weight: bold
+  }
