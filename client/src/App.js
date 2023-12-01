@@ -10,7 +10,7 @@ function App() {
   const onUploadClick = () => {
     fileInputUseRef.current.click();
   };
-  console.log(file);
+  //console.log(file);
   useEffect(() => {
     const getImage = async () => {
       if (file) {
